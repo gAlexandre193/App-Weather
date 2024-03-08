@@ -1,0 +1,113 @@
+/* Global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+form input,
+form button { outline: none; }
+
+body {
+  background-image: url(https://cdn.pixabay.com/photo/2021/08/08/10/34/ocean-6530523_1280.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #f2f5f9;
+  height: 100vh;
+}
+
+.wrapperContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cardWeather {
+  background-image: linear-gradient(to top, #caaf74 0%, #9fbfc0 100%);
+  color: #323232;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 1) inset;
+  border-radius: 60px;
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  height: 96px;
+  transition: height .25s;
+  width: 280px;
+}
+
+.showWeatherInfo { height: 360px !important; }
+.showWeatherInfo .weatherInfoContainer { bottom: 24px !important; }
+
+.formWeatherLocation {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  height: 46px;
+  z-index: 1;
+}
+
+.formWeatherLocation .input {
+  background-color: #e3e3e3;
+  border: 1px solid #323232;
+  border-radius: 16px;
+  padding: 0 8px;
+  width: 100%;
+}
+
+.formWeatherLocation .btnSearchLocation {
+  background-color: #e3e3e3;
+  border: 1px solid #323232;
+  border-radius: 100%;
+  cursor: pointer;
+  height: 100%;
+  width: 60px;
+  transition: background-color .25s;
+}
+
+.formWeatherLocation .btnSearchLocation:hover { background-color: #f2f5f9; }
+
+.cardWeather .weatherInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  left: 24px;
+  bottom: -100%;
+  padding-top: 12px;
+  height: calc(100% - ((24px * 2) + 46px)); /* Conside o padding vertical, 24px, e o height do .formWeatherLocation, 46px */
+  width: calc(100% - (24px * 2)); /* Conside o padding horizontal, 24px */
+  transition: bottom .25s;
+}
+
+.weatherInfoContainer .imgWeatherIllustration { width: 120px; }
+
+.weatherInfoContainer .currentTempText {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.weatherInfoContainer .descritionWeatherText { 
+  font-size: .9rem; 
+  text-transform: capitalize;
+}
+
+.weatherInfoContainer .anotherInfoContainer {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.weatherInfoContainer > .anotherInfoContainer .colContainer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.anotherInfoContainer > .colContainer i { font-size: 1.6rem; }
